@@ -32,6 +32,10 @@
     
     <h2>対応履歴</h2>
     <% @comments.each do |comment| %>
+ <!--追加開始-->  
+     <%= image_tag(current_user.image_url, :size => "100x100") %>
+<!--追加終了-->  
+    
       <div class="media">
         <div class="media-body">
           <%= simple_format(comment.body) %>
@@ -43,7 +47,11 @@
       </div>
     <% end %>
     
+    
     <%= form_for(@comment, url: { controller: :comments, action: :create }) do |f| %>
+ <!--追加開始-->    
+     <%= image_tag(current_user.image_url, :size => "100x100") %>
+<!--追加終了-->    
       <div class="form-group">
         <%= f.label :body , '対応内容' %><br>
         <%= f.text_area :body, class: "form-control" %>
