@@ -4,7 +4,7 @@ class Customer < ActiveRecord::Base
   belongs_to :post
   
   has_many :comments
-  
+
 
   validates :family_name,
     presence: true, length: { maximum: 20 }
